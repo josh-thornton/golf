@@ -14,7 +14,7 @@ namespace Golf.Interfaces
     void DisplayCourses(); //NOTE iterate over the Courses list and display the names and details to the user so that they know their course options
     void SelectCourse(); //NOTE gracefully handles bad inputs and assigns the ActiveCourse based on appropriate user selection
     void SetPlayers(); //NOTE responsible for determining number of players and generating a new player instance for each and adding them to the list of players
-                       // void Run(); //NOTE responsible for managing application flow and gameplay
-                       // void DisplayPlayerResults(); //NOTE responsible for determining winner and [STRETCH GOAL] listing out players scores per hole
+    void Run(); //NOTE responsible for managing application flow and gameplay
+    void DisplayPlayerResults(); //NOTE responsible for determining winner and [STRETCH GOAL] listing out players scores per hole
   }
 }

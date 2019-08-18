@@ -10,129 +10,29 @@ namespace Golf
     public Course ActiveCourse { get; set; }
     public List<Player> Players { get; set; }
     public List<Course> Courses { get; set; }
+    public App()
+    {
+      Courses = new List<Course>();
+      Players = new List<Player>();
+    }
     public void Setup()
     {
       Course warmSprings = new Course("Warm Springs");
       Course quailHollow = new Course("Quail Hollow");
       Course indianLakes = new Course("Indian Lakes");
 
+      Hole a = new Hole(3, 2);
+      Hole b = new Hole(4, 2);
+      Hole c = new Hole(5, 2);
+
+      warmSprings.Holes.Add(a);
+      warmSprings.Holes.Add(a);
+      warmSprings.Holes.Add(a);
+
       Courses.Add(warmSprings);
       Courses.Add(quailHollow);
       Courses.Add(indianLakes);
 
-      Hole w1 = new Hole(4, 397);
-      Hole w2 = new Hole(4, 357);
-      Hole w3 = new Hole(4, 370);
-      Hole w4 = new Hole(3, 138);
-      Hole w5 = new Hole(4, 367);
-      Hole w6 = new Hole(5, 542);
-      Hole w7 = new Hole(4, 409);
-      Hole w8 = new Hole(3, 176);
-      Hole w9 = new Hole(5, 440);
-      Hole w10 = new Hole(4, 334);
-      Hole w11 = new Hole(4, 400);
-      Hole w12 = new Hole(5, 497);
-      Hole w13 = new Hole(3, 141);
-      Hole w14 = new Hole(4, 373);
-      Hole w15 = new Hole(5, 503);
-      Hole w16 = new Hole(4, 387);
-      Hole w17 = new Hole(4, 381);
-      Hole w18 = new Hole(3, 173);
-
-      Hole q1 = new Hole(4, 227);
-      Hole q2 = new Hole(3, 179);
-      Hole q3 = new Hole(4, 339);
-      Hole q4 = new Hole(3, 149);
-      Hole q5 = new Hole(4, 333);
-      Hole q6 = new Hole(4, 375);
-      Hole q7 = new Hole(5, 469);
-      Hole q8 = new Hole(4, 379);
-      Hole q9 = new Hole(4, 370);
-      Hole q10 = new Hole(4, 383);
-      Hole q11 = new Hole(4, 294);
-      Hole q12 = new Hole(4, 344);
-      Hole q13 = new Hole(4, 356);
-      Hole q14 = new Hole(4, 293);
-      Hole q15 = new Hole(3, 170);
-      Hole q16 = new Hole(5, 477);
-      Hole q17 = new Hole(3, 138);
-      Hole q18 = new Hole(4, 402);
-
-      Hole l1 = new Hole(4, 325);
-      Hole l2 = new Hole(4, 375);
-      Hole l3 = new Hole(3, 220);
-      Hole l4 = new Hole(4, 386);
-      Hole l5 = new Hole(4, 400);
-      Hole l6 = new Hole(5, 523);
-      Hole l7 = new Hole(3, 170);
-      Hole l8 = new Hole(4, 300);
-      Hole l9 = new Hole(4, 320);
-      Hole l10 = new Hole(4, 340);
-      Hole l11 = new Hole(4, 360);
-      Hole l12 = new Hole(3, 170);
-      Hole l13 = new Hole(4, 366);
-      Hole l14 = new Hole(4, 435);
-      Hole l15 = new Hole(5, 530);
-      Hole l16 = new Hole(3, 208);
-      Hole l17 = new Hole(4, 288);
-      Hole l18 = new Hole(4, 330);
-
-      warmSprings.Holes.Add(w1);
-      warmSprings.Holes.Add(w2);
-      warmSprings.Holes.Add(w3);
-      warmSprings.Holes.Add(w4);
-      warmSprings.Holes.Add(w5);
-      warmSprings.Holes.Add(w6);
-      warmSprings.Holes.Add(w7);
-      warmSprings.Holes.Add(w8);
-      warmSprings.Holes.Add(w9);
-      warmSprings.Holes.Add(w10);
-      warmSprings.Holes.Add(w11);
-      warmSprings.Holes.Add(w12);
-      warmSprings.Holes.Add(w13);
-      warmSprings.Holes.Add(w14);
-      warmSprings.Holes.Add(w15);
-      warmSprings.Holes.Add(w16);
-      warmSprings.Holes.Add(w17);
-      warmSprings.Holes.Add(w18);
-
-      quailHollow.Holes.Add(q1);
-      quailHollow.Holes.Add(q2);
-      quailHollow.Holes.Add(q3);
-      quailHollow.Holes.Add(q4);
-      quailHollow.Holes.Add(q5);
-      quailHollow.Holes.Add(q6);
-      quailHollow.Holes.Add(q7);
-      quailHollow.Holes.Add(q8);
-      quailHollow.Holes.Add(q9);
-      quailHollow.Holes.Add(q10);
-      quailHollow.Holes.Add(q11);
-      quailHollow.Holes.Add(q12);
-      quailHollow.Holes.Add(q13);
-      quailHollow.Holes.Add(q14);
-      quailHollow.Holes.Add(q15);
-      quailHollow.Holes.Add(q16);
-      quailHollow.Holes.Add(q17);
-      quailHollow.Holes.Add(q18);
-
-      indianLakes.Holes.Add(l1);
-      indianLakes.Holes.Add(l2);
-      indianLakes.Holes.Add(l3);
-      indianLakes.Holes.Add(l4);
-      indianLakes.Holes.Add(l5);
-      indianLakes.Holes.Add(l6);
-      indianLakes.Holes.Add(l7);
-      indianLakes.Holes.Add(l8);
-      indianLakes.Holes.Add(l9);
-      indianLakes.Holes.Add(l10);
-      indianLakes.Holes.Add(l11);
-      indianLakes.Holes.Add(l12);
-      indianLakes.Holes.Add(l13);
-      indianLakes.Holes.Add(l14);
-      indianLakes.Holes.Add(l15);
-      indianLakes.Holes.Add(l16);
-      indianLakes.Holes.Add(l17);
-      indianLakes.Holes.Add(l18);
     }
     public void DisplayCourses()
     {
@@ -167,7 +67,6 @@ namespace Golf
     public void SetPlayers()
     {
       Console.Clear();
-      Console.WriteLine($"You have selected {ActiveCourse}.");
       Console.WriteLine("How many players?");
       switch (Console.ReadLine())
       {
@@ -226,9 +125,35 @@ namespace Golf
     }
     public void Run()
     {
-
+      foreach (var Hole in ActiveCourse.Holes)
+      {
+        Console.WriteLine($"Hole {Hole}");
+        foreach (var Player in Players)
+        {
+          Console.WriteLine($"Enter player score:");
+          string holeStroke = Console.ReadLine();
+          if (Int32.TryParse(holeStroke, out int result))
+          {
+            Player.Scores.Add(new Score(result, Hole.Number, Hole.Par));
+          }
+          else
+          {
+            Console.WriteLine("Invalid entry");
+            break;
+          }
+        }
+      }
     }
-
-
+    public void DisplayPlayerResults()
+    {
+      foreach (var Player in Players)
+      {
+        Console.WriteLine($"{Player.Name}'s results:");
+        foreach (var Score in Player.Scores)
+        {
+          Console.WriteLine($"{Score.HoleNumber}: {Score.HoleScore}");
+        }
+      }
+    }
   }
 }

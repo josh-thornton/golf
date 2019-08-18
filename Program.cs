@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using Golf.Interfaces;
 using Golf.Models;
+using Golf.Interfaces;
 
 namespace Golf
 {
@@ -9,15 +8,20 @@ namespace Golf
   {
     static void Main(string[] args)
     {
+      Boolean active;
+      active = true;
       Console.Clear();
       App app = new App();
+      app.Setup();
+      app.DisplayCourses();
+      app.SelectCourse();
+      app.SetPlayers();
+      while (active)
       {
-        app.Setup();
-        app.DisplayCourses();
-        app.SelectCourse();
-        app.SetPlayers();
-
+        app.DisplayPlayerResults();
       }
+
+
     }
   }
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Golf.Interfaces;
 
@@ -7,7 +6,7 @@ namespace Golf.Models
   public class Player : IPlayer
   {
     public string Name { get; set; }
-    public List<int> Scores { get; set; }
+    public List<Score> Scores { get; set; }
     public void DisplayFinalScore()
     {
 
@@ -15,7 +14,7 @@ namespace Golf.Models
     public Player(string name)
     {
       Name = name;
-      Scores = new List<int>();
+      Scores = new List<Score>();
     }
   }
 }

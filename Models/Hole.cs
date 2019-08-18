@@ -6,11 +6,11 @@ namespace Golf.Models
   public class Hole : IHole
   {
     public int Par { get; set; }
-    public int Distance { get; set; }
-    public Hole(int par, int distance)
+    public int Number { get; set; }
+    public Hole(int par, int number)
     {
       Par = par;
-      Distance = distance;
+      Number = number;
     }
   }
 }
