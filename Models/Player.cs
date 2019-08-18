@@ -7,10 +7,6 @@ namespace Golf.Models
   {
     public string Name { get; set; }
     public List<Score> Scores { get; set; }
-    public void DisplayFinalScore()
-    {
-
-    }
     public Player(string name)
     {
       Name = name;
