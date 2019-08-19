@@ -257,7 +257,7 @@ namespace Golf
     public void DisplayPlayerResults()
     {
       string winner = "";
-      string userChoice = "";
+      int lowScore = 500;
       Console.Clear();
       foreach (var Player in Players)
       {
@@ -265,7 +265,6 @@ namespace Golf
         int totalScore = 0;
         int totalPar = 0;
         int realScore = 0;
-        int lowScore = 500;
         foreach (var Score in Player.Scores)
         {
           Console.WriteLine($"Hole: {Score.HoleNumber} Strokes: {Score.HoleScore} Par: {Score.HolePar}");
@@ -278,14 +277,11 @@ namespace Golf
           lowScore = realScore;
           winner = Player.Name;
         }
-        Console.WriteLine($"Total Score: {totalScore}\nTotal Par: {totalPar}\nFinal Tally: {realScore}\n\nPress any key for next player.");
-        userChoice = Console.ReadLine();
-        switch (userChoice)
+        Console.WriteLine($"Total Score: {totalScore}\nTotal Par: {totalPar}\nFinal Tally: {realScore}\n\nPress any key for next player or final score.");
+        switch (Console.ReadLine())
         {
-          case "":
-            Console.Clear();
-            break;
           default:
+            Console.Clear();
             break;
         }
       }
