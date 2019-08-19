@@ -11,9 +11,9 @@ namespace Golf
       Boolean active;
       active = true;
       Console.Clear();
-      App app = new App();
       while (active)
       {
+        App app = new App();
         app.Setup();
         app.DisplayCourses();
         app.SelectCourse();

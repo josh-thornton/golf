@@ -7,6 +7,7 @@ namespace Golf.Models
   {
     public string Name { get; set; }
     public List<Hole> Holes { get; set; }
+
     public Course(string name)
     {
       Name = name;

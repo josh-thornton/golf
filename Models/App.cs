@@ -174,7 +174,6 @@ namespace Golf
     }
     public void SetPlayers()
     {
-      Console.Clear();
       Console.WriteLine($"You have selected {ActiveCourse.Name}.");
       Console.WriteLine("How many players?");
       switch (Console.ReadLine())
@@ -257,15 +256,40 @@ namespace Golf
     }
     public void DisplayPlayerResults()
     {
+      string winner = "";
+      string userChoice = "";
       Console.Clear();
       foreach (var Player in Players)
       {
         Console.WriteLine($"{Player.Name}'s results:");
+        int totalScore = 0;
+        int totalPar = 0;
+        int realScore = 0;
+        int lowScore = 500;
         foreach (var Score in Player.Scores)
         {
           Console.WriteLine($"Hole: {Score.HoleNumber} Strokes: {Score.HoleScore} Par: {Score.HolePar}");
+          totalScore += Score.HoleScore;
+          totalPar += Score.HolePar;
+        }
+        realScore = totalScore - totalPar;
+        if (realScore < lowScore)
+        {
+          lowScore = realScore;
+          winner = Player.Name;
+        }
+        Console.WriteLine($"Total Score: {totalScore}\nTotal Par: {totalPar}\nFinal Tally: {realScore}\n\nPress any key for next player.");
+        userChoice = Console.ReadLine();
+        switch (userChoice)
+        {
+          case "":
+            Console.Clear();
+            break;
+          default:
+            break;
         }
       }
+      Console.WriteLine($"{winner} is the winner!");
     }
   }
 }
